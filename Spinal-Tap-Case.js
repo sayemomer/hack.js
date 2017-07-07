@@ -7,3 +7,15 @@ function spinalCase(str) {
 }
 
 spinalCase("AllThe-small Things");
+
+// Lodash implimentation 
+
+var _ = require('lodash');
+
+function kababCase(str) {
+  
+  return _.kebabCase(str);
+  
+}
+
+kababCase("AllThe-small Things");
