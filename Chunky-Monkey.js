@@ -27,3 +27,16 @@ return finalArr ;
 }
 
 chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)
+
+
+// A full implimentation with LOdash 
+
+var _ = require('lodash');
+
+function chunkArrayInGroups(arr, size) {
+  
+  return _.chunk(arr, size);
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)
+
