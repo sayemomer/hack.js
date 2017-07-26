@@ -1,24 +1,34 @@
 function diffArray(arr1, arr2) {
   
   let resultArray=[];
-  for(let i=0;i<arr1.length;i++){
+  let newArray=arr1.concat(arr2).sort();
+  
+  var temp ;
+  
+  
+  for(let j=0;j<=newArray.length  ;j++){
+  
+     temp =newArray.shift();
     
     
-    for(let j=0;j<arr2.length;j++){
-
-      if( arr1[i]==arr2[j] ){
-        
-          delete arr2[j];
-          break;
-        
-      }
+  for( let i=0 ;i<=newArray.length ;i++){
+    if( newArray[i]===temp){
+    
+      newArray.shift();
      
+      break;
     }
-     
+    else {
+      resultArray.push( temp );
+      break;
+    }
+    
   }
+   j=0 ; 
+  }
+ 
   
-  return  arr2 ;
-  
+ return resultArray ;
 }
 
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
