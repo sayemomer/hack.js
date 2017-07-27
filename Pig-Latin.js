@@ -17,8 +17,11 @@ function translatePigLatin(str) {
   const vowel=["a","A","e","E","i","I","o","O","u","U"];
   let splitStr= str.split("");
   let foundVowel =findMatchIndex(splitStr,vowel);
+  if( foundVowel ===0){
+    return str.concat("way");
+  }
   let y=str.slice(foundVowel).split("");
   return  y.concat(str.substr(0,foundVowel)+"ay").join("");
 } 
 
-translatePigLatin("california");
+translatePigLatin("algorithm")
