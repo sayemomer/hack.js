@@ -13,11 +13,11 @@ function checkCashRegister(change,cashInDrawer) {
     trackCoin[i]=-1;
   }
   
-  for( let cashInDrawerIndex =0 ; cashInDrawerIndex<1;cashInDrawerIndex++){
+  for( let cashInDrawerIndex =0 ; cashInDrawerIndex<cashInDrawer.length;cashInDrawerIndex++){
     
     for( let totalCoinIndex =1 ; totalCoinIndex<totalCoin.length; totalCoinIndex++){
       
-      console.log([ totalCoinIndex,cashInDrawer[cashInDrawerIndex] ]);
+     // console.log([ totalCoinIndex,cashInDrawer[cashInDrawerIndex] ]);
       
        if( totalCoinIndex >= cashInDrawer[cashInDrawerIndex] ){
          
@@ -25,9 +25,11 @@ function checkCashRegister(change,cashInDrawer) {
         
           minCoin=Math.min( totalCoin[totalCoinIndex] , 1+totalCoin[totalCoinIndex-cashInDrawer[cashInDrawerIndex]] )
           
-           console.log(minCoin);
+         //  console.log(minCoin);
         
          totalCoin[totalCoinIndex] = minCoin;
+         
+         trackCoin[totalCoinIndex] =cashInDrawerIndex;
       
       }
       
@@ -36,7 +38,9 @@ function checkCashRegister(change,cashInDrawer) {
   }
   
   console.log(totalCoin);
+  console.log(trackCoin);
 }
 
 
 checkCashRegister(13,[7,2,3,6]);
+
