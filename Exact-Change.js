@@ -1,8 +1,9 @@
-function checkCashRegister(change,cashInDrawer) {
+function checkCashRegister(price,cash,cashInDrawer) {
   
    var totalCoin=[];
    var trackCoin=[];
     let minCoin ;
+    var change = cash-price;
    
    totalCoin[0]=0;
   
@@ -91,4 +92,4 @@ console.log(coin);
   
 }
 
-checkCashRegister(14,[7,2,3,6]);
+checkCashRegister(100,110,[7,2,3,6]);
