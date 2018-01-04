@@ -51,10 +51,33 @@ function calCoin(trackCoin,cashInDrawer,change){
   
   var coin=[];
   var total;
+  var flag;
   
   coin.push( cashInDrawer[ trackCoin[trackCoin.length-1] ] );
-  
-    coin.push( cashInDrawer[ trackCoin[change-coin[coin.length-1] ] ] );
+   
+  // console.log(flag);
+   
+ while ( coin.reduce(
+  ( acc, cur ) => acc + cur,
+  0
+) !== change ){
+   
+     flag = change - coin.reduce(
+  ( acc, cur ) => acc + cur,
+  0
+);
+   
+    coin.push( cashInDrawer[ trackCoin[flag] ] );
+    
+   
+
+ // coin.push( cashInDrawer[ trackCoin[flag] ]);
+    
+
+}
+
+    
+
   
   
    total =coin.reduce(
@@ -62,10 +85,10 @@ function calCoin(trackCoin,cashInDrawer,change){
   0
 );
 
-console.log( total)
-  
-  console.log(coin);
+console.log( total);
+
+console.log(coin);
   
 }
 
-checkCashRegister(11,[7,2,3,6]);
+checkCashRegister(14,[7,2,3,6]);
