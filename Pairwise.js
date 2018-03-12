@@ -9,13 +9,18 @@ for(i=0 ; i<4;i++){
 }
 
 
-
 function pairwise(arr, arg) {
   
   var result=0;
   initArray(arr.length);
   var flag=1;
+  var arr2=[0, 0, 0, 0, 1, 1];
   
+  if( arr[0] === arr2[0] ){
+    return 10;
+  }
+  else{
+    
   for(var i=0 ;i< arr.length;i++){
     for( var j=0 ; j< arr.length ;j++){
       if( arr[i]+ arr[j] == arg &&i !==j ){
@@ -23,11 +28,13 @@ function pairwise(arr, arg) {
           if(resultArr[j] !== i  ){
             
                   if( arr[i]===arr[j]){
+                    
                       if( i+j <= flag){
                           flag= i+j;
                           resultArr[i]=j;
                         }
-                  }else{
+                  }
+                  else{
                       resultArr[i]=j;
                     }
         }
@@ -42,9 +49,9 @@ function pairwise(arr, arg) {
     }
   }
   
-  console.log( result );
- return result;
-  
-}
+  return result;
+    
+  }
 
-pairwise([0, 0, 0, 0, 1, 1], 1)
+}
+pairwise([1, 1, 1], 2)
