@@ -1,22 +1,46 @@
+function  approcimateCalculation(orbitalPeriod){
+  
+  var newStringArray =orbitalPeriod.toString();
+  var considerationValue =newStringArray.slice(
+    newStringArray.indexOf('.')+1
+    ).split('')[0] ;
+  
+  if( considerationValue > 5 ){
+    
+    return Math.ceil(orbitalPeriod);
+  }
+  
+  return Math.floor(orbitalPeriod)
+}
+
+function helperCalculation(arr){
+  
+  var final={};
+  var orbitalPeriod;
+     
+  orbitalPeriod= (2 * Math.PI ) *Math.sqrt (
+    Math.pow((arr.avgAlt+earthRadius),3)/GM);
+  
+  final.name=arr.name;
+  final.orbitalPeriod= approcimateCalculation( orbitalPeriod );
+  
+  return final;
+  
+}
+
 function orbitalPeriod(arr) {
   
   var result=[];
-  var final={};
+  GM = 398600.4418;
+  earthRadius = 6367.4447;
   
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
-  var orbitalPeriod;
-  
-  orbitalPeriod= (2 * Math.PI ) *Math.sqrt ( Math.pow((arr[0].avgAlt+earthRadius),3)/GM);
-  
-  final.name=arr[0].name;
-  final.orbitalPeriod=Math.ceil(orbitalPeriod);
-  
-  result.push( final );
-  
-  
+  for ( let i =0 ;i<arr.length ;i++){
+    
+    result.push( helperCalculation( arr[i]) );
+    
+  }
   
   return result ;
 }
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+orbitalPeriod( [{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}] );
