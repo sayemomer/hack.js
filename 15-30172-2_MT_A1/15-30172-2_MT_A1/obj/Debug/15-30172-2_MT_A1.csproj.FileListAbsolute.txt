@@ -1,0 +1,6 @@
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\bin\Debug\15-30172-2_MT_A1.exe.config
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\bin\Debug\15-30172-2_MT_A1.exe
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\bin\Debug\15-30172-2_MT_A1.pdb
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\obj\Debug\15-30172-2_MT_A1.csprojResolveAssemblyReference.cache
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\obj\Debug\15-30172-2_MT_A1.exe
+H:\15-30172-2_MT_A1\15-30172-2_MT_A1\obj\Debug\15-30172-2_MT_A1.pdb
