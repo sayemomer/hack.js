@@ -38,3 +38,35 @@ function updateInventory(curInv, newInv) {
 updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]);
 
 
+      //-------------------------------------- LoDash Implimentation -------------------------------------------//
+
+
+var _ = require('lodash');
+
+function updateInventoryHelper(newInv,curInv){
+  
+  if(newInv[1]===curInv[1]){
+      if( newInv[0] > curInv[0] ){
+            curInv[0] = newInv[0]+curInv[0];
+        }
+    }
+}
+
+function updateInventory(curInventory, newInv) {
+   var check;
+   
+   _.forEach(curInventory, (curInv)=>{
+     
+     _.forEach( newInv , (newInv)=>{
+      
+         updateInventoryHelper(newInv,curInv);
+       
+     })
+     
+     
+   });
+     
+ return _.orderBy(curInventory, [1], ['asc']);
+}
+
+updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]);
