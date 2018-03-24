@@ -1,21 +1,5 @@
-function alpabeticSort(curInv){
-  var temp ;
-  for( var i=0 ;i<curInv.length-1;i++){
-    for( var j=0;j<curInv.length-1;j++){
-      
-      if( curInv[j][1].split("")[0].charCodeAt() > curInv[j+1][1].split("")[0].charCodeAt() ){
-        
-         temp=curInv[j];
-        curInv[j]=curInv[j+1];
-        curInv[j+1]=temp;
-        
-      }
-    }
-  }
-  
-  return curInv;
-  
-}
+
+var _ = require('lodash');
 
 function updateInventoryHelper(newInv,curInv){
   
@@ -48,9 +32,9 @@ function updateInventory(curInv, newInv) {
         
      }
      
-    return alpabeticSort(curInv);
+ return _.orderBy(curInv, [1], ['asc']);
 }
 
-// Example inventory lists
-updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [])
+updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]);
+
 
